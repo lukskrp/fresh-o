@@ -55,11 +55,12 @@ disallowed_methods = "deny"
 
 [workspace.package]
 version = "0.5.9"
-authors = ["Noam Lewis"]
+authors = ["Noam Lewis", "fresh-o contributors"]
 edition = "2021"
 license = "GPL-3.0-or-later"
-repository = "https://github.com/sinelaw/fresh"
-homepage = "https://sinelaw.github.io/fresh/"
+# fresh-o, a hard fork of Fresh (see FORK.md).
+repository = "https://github.com/lukskrp/fresh-o"
+homepage = "https://github.com/lukskrp/fresh-o"
 documentation = "https://docs.rs/fresh-editor"
 
 [workspace.dependencies]

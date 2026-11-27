@@ -22,14 +22,14 @@
       "default": null
     },
     "check_for_updates": {
-      "description": "Check for new versions on startup (default: true).\nAlso sends basic anonymous telemetry (version, OS, terminal type).",
+      "description": "Check for new versions on startup (default: false in fresh-o).\nAlso sends basic anonymous telemetry (version, OS, terminal type).\nfresh-o: off by default, since the check and the telemetry go to upstream\nFresh's servers, not to fresh-o's (see FORK.md).",
       "type": "boolean",
-      "default": true
+      "default": false
     },
     "self_update": {
-      "description": "Offer to update from inside the editor when a new version is found (default: true).\nWhen off, the status-bar indicator only tells you an update exists.\nNeeds `check_for_updates` and an install method that can self-update.",
+      "description": "Offer to update from inside the editor when a new version is found (default: false in fresh-o).\nWhen off, the status-bar indicator only tells you an update exists.\nNeeds `check_for_updates` and an install method that can self-update.",
       "type": "boolean",
-      "default": true
+      "default": false
     },
     "auto_attach": {
       "description": "When on (default), `fresh` with no arguments is `fresh -a`: it runs in a single\nbackground editor that outlives the terminal, and every later bare `fresh`\nreattaches to it. When off, it opens a plain editor in this terminal. Runs with\nfiles or flags are unaffected. Formerly `orchestrator_mode`.",

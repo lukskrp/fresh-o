@@ -1,3 +1,15 @@
+# fresh-o
+
+> **fresh-o is a hard fork of [Fresh](https://github.com/sinelaw/fresh)** by Noam Lewis
+> and contributors, taken at v0.5.9. It is developed on its own: changes from Fresh
+> are looked at and taken only when wanted, and fresh-o doesn't depend on them. The
+> command is still `fresh`. fresh-o is the terminal editor of
+> [TulsiOS](https://github.com/lukskrp/TulsiOS). See [FORK.md](FORK.md) for what
+> differs and how upstream changes are followed. Issues about fresh-o go here, not to
+> Fresh.
+>
+> The rest of this README is Fresh's, and its links point to Fresh's site.
+
 # Fresh
 
 A modern, full-featured terminal text editor, **with zero configuration**. Familiar keybindings, mouse support, and IDE-level features — no learning curve required.

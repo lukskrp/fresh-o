@@ -458,15 +458,17 @@ pub struct Config {
     #[serde(default)]
     pub locale: LocaleName,
 
-    /// Check for new versions on startup (default: true).
+    /// Check for new versions on startup (default: false in fresh-o).
     /// Also sends basic anonymous telemetry (version, OS, terminal type).
-    #[serde(default = "default_true")]
+    /// fresh-o: off by default, since the check and the telemetry go to upstream
+    /// Fresh's servers, not to fresh-o's (see FORK.md).
+    #[serde(default)]
     pub check_for_updates: bool,
 
-    /// Offer to update from inside the editor when a new version is found (default: true).
+    /// Offer to update from inside the editor when a new version is found (default: false in fresh-o).
     /// When off, the status-bar indicator only tells you an update exists.
     /// Needs `check_for_updates` and an install method that can self-update.
-    #[serde(default = "default_true")]
+    #[serde(default)]
     pub self_update: bool,
 
     /// When on (default), `fresh` with no arguments is `fresh -a`: it runs in a single
@@ -3016,8 +3018,8 @@ impl Default for Config {
             version: 0,
             theme: default_theme_name(),
             locale: LocaleName::default(),
-            check_for_updates: true,
-            self_update: true,
+            check_for_updates: false,
+            self_update: false,
             auto_attach: true,
             open_last_workspace: false,
             editor: EditorConfig::default(),
