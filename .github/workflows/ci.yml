@@ -64,7 +64,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Cache Cargo dependencies
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
       - name: check formatting
         run: cargo fmt -- --check
   clippy:
@@ -76,7 +76,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Cache Cargo dependencies
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
       # Plain `cargo clippy` fails the build only on error-level diagnostics
       # (deny-by-default lints, the crate's `#![deny(clippy::let_underscore_must_use)]`,
       # or compile errors) — clippy *warnings* do not fail it. The previous
@@ -109,7 +109,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Cache Cargo dependencies
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
       - name: Generate schema
         run: cargo run --features dev-bins --bin generate_schema > /tmp/config-schema.json
       - name: Check schema is up-to-date
@@ -125,7 +125,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Cache Cargo dependencies
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
       - name: Regenerate fresh.d.ts and the API reference
         run: cargo test -p fresh-plugin-runtime --lib write_fresh_dts_file -- --ignored
       - name: Check they are up-to-date
@@ -148,7 +148,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Cache Cargo dependencies
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
       - name: Check build without plugins feature
         run: cargo check --no-default-features --features runtime --all-targets
 
@@ -171,7 +171,7 @@ jobs:
         with:
           toolchain: "1.98"
       - name: Cache Cargo dependencies
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
       - name: Check
         run: cargo check --workspace --all-targets --all-features
 
@@ -219,7 +219,7 @@ jobs:
         uses: dtolnay/rust-toolchain@6bed0761d98439e5a578e2877258200ad565ba87 # stable branch
       # Both shards build the same thing; one saving the cache is enough.
       - name: Cache Cargo dependencies
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
         with:
           save-if: ${{ matrix.shard == 1 }}
       - name: Install cargo-nextest
@@ -291,7 +291,7 @@ jobs:
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@6bed0761d98439e5a578e2877258200ad565ba87 # stable branch
       - name: Cache Cargo dependencies
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
       - name: Engine boundary, TypeScript (esbuild) and plugin runtime
         run: cargo test --locked -p fresh-js -p fresh-core -p fresh-parser-js -p fresh-plugin-runtime --no-default-features --features fresh-core/plugins
       - name: Editor plugin tests (Debian package features)
