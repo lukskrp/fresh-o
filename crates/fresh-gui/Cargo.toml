@@ -36,7 +36,7 @@ muda = "0.17"
 # ObjC interop for NSNotificationCenter (menu tracking detection).
 # Versions match the ones muda 0.15 already pulls in.
 objc2-foundation = { version = "0.2", features = ["NSNotification", "NSString", "NSOperation", "block2"] }
-block2 = "0.5"
+block2 = "0.6"
 
 # Windows: AppUserModelID registration so taskbar grouping and the pinned-
 # shortcut identity match the running window (see PRODUCTIZATION_PLAN.md §0.1).
